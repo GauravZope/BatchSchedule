@@ -8,11 +8,11 @@ public interface BatchScheduleService {
 
 	boolean insertBatchSchedule(BatchScheduleDTO batchSchedule);
 	
-	BatchScheduleDTO findBatchScheduleById(int id);
+	BatchScheduleDTO findBatchScheduleById(BatchScheduleDTO batchScheduleDto);
 	
 	int getCountOfRecords();
 	
 	List<BatchScheduleDTO>  findAllBatchSchedule();
 	
-	boolean deleteBatchScheduleById(int id);
+	boolean deleteBatchScheduleById(BatchScheduleDTO batchScheduleDto);
 }

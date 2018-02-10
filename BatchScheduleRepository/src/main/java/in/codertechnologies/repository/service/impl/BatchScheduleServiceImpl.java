@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import in.coderinfotech.batchschedule.BatchDetails;
 import in.codertechnologies.batchSchedule.dto.BatchScheduleDTO;
 import in.codertechnologies.repository.dao.BachScheduleDAO;
 import in.codertechnologies.repository.service.BatchScheduleService;
@@ -17,32 +18,28 @@ public class BatchScheduleServiceImpl implements BatchScheduleService{
 
 	@Override
 	public boolean insertBatchSchedule(BatchScheduleDTO batchSchedule) {
-		// TODO Auto-generated method stub
-		return false;
+		return bachScheduleDAO.insertBatchSchedule(batchSchedule);
 	}
 
 	@Override
-	public BatchScheduleDTO findBatchScheduleById(int id)  {
-		// TODO Auto-generated method stub
-		return null;
+	public BatchScheduleDTO findBatchScheduleById(BatchScheduleDTO batchScheduleDTO)  {
+		return bachScheduleDAO.findBatchScheduleById(batchScheduleDTO);
 	}
 
 	@Override
 	public int getCountOfRecords() {
-		// TODO Auto-generated method stub
-		return 0;
+		return bachScheduleDAO.getCountOfRecords();
 	}
 
 	@Override
 	public List<BatchScheduleDTO> findAllBatchSchedule() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return bachScheduleDAO.findAllBatchSchedule();
 	}
 
 	@Override
-	public boolean deleteBatchScheduleById(int id) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteBatchScheduleById(BatchScheduleDTO batchScheduleDTO) {
+		return bachScheduleDAO.deleteBatchScheduleById(batchScheduleDTO);
 	} 
 	
 	
