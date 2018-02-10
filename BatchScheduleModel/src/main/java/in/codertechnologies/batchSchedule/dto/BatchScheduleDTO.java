@@ -1,13 +1,13 @@
 package in.codertechnologies.batchSchedule.dto;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 
 public class BatchScheduleDTO {
 
-	private int id;
-	private String trainerFirstName;
-	private String trainerLastName;
+	private long id;
+	private TrainerDetailsDTO trainerDetailsDTO;
 	private String center;
 	private String lab;
 	private String timing;
@@ -16,23 +16,18 @@ public class BatchScheduleDTO {
 	private char completed;
 	private String duration;	
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
-	public String getTrainerFirstName() {
-		return trainerFirstName;
+	
+	public TrainerDetailsDTO getTrainerDetailsDTO() {
+		return trainerDetailsDTO;
 	}
-	public void setTrainerFirstName(String trainerFirstName) {
-		this.trainerFirstName = trainerFirstName;
-	}
-	public String getTrainerLastName() {
-		return trainerLastName;
-	}
-	public void setTrainerLastName(String trainerLastName) {
-		this.trainerLastName = trainerLastName;
+	public void setTrainerDetailsDTO(TrainerDetailsDTO trainerDetailsDTO) {
+		this.trainerDetailsDTO = trainerDetailsDTO;
 	}
 	public String getCenter() {
 		return center;
@@ -72,8 +67,8 @@ public class BatchScheduleDTO {
 	}
 	@Override
 	public String toString() {
-		return "BatchScheduleDTO [id=" + id + ", trainerFirstName=" + trainerFirstName + ", trainerLastName="
-				+ trainerLastName + ", center=" + center + ", lab=" + lab + ", timing=" + timing + ", startDate="
+		return "BatchScheduleDTO [id=" + id + ", trainerFirstName=" + "" + ", trainerLastName="
+				+ "" + ", center=" + center + ", lab=" + lab + ", timing=" + timing + ", startDate="
 				+ startDate + ", endDate=" + endDate + ", completed=" + completed + "]";
 	}
 	public String getDuration() {
