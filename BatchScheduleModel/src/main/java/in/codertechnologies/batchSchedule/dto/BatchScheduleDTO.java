@@ -2,18 +2,45 @@ package in.codertechnologies.batchSchedule.dto;
 
 import java.util.Date;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 
 
 public class BatchScheduleDTO {
 
+	
 	private long id;
+	
 	private TrainerDetailsDTO trainerDetailsDTO;
+	
+	@NotNull @Size(min=1 , max= 4)
+	@Pattern(regexp = "[A-Z]{2}[0-9]{2}")
+	private String batchCode;
+	
+	@NotNull @Size(min=1 , max= 40)
 	private String center;
+	
+	@NotNull @Size(min=1 , max= 40)
 	private String lab;
+	
+	@NotNull @Size(min=1 , max= 40)
 	private String timing;
+	
+	@NotNull @Future
 	private Date startDate;
+	
+	@NotNull @Future
 	private Date endDate;	
+	
+	@NotNull
 	private char completed;
+	
+	@NotNull @Min(2) @Max(8)
 	private String duration;	
 	
 	public long getId() {
@@ -76,6 +103,12 @@ public class BatchScheduleDTO {
 	}
 	public void setDuration(String duration) {
 		this.duration = duration;
+	}
+	public String getBatchCode() {
+		return batchCode;
+	}
+	public void setBatchCode(String batchCode) {
+		this.batchCode = batchCode;
 	}
 	
 	
