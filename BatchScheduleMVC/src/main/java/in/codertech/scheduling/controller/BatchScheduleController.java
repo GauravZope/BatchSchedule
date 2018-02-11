@@ -1,13 +1,21 @@
 package in.codertech.scheduling.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,12 +33,17 @@ public class BatchScheduleController {
 	private BatchScheduleService batchScheduleService;
 	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
-	public String add(BatchScheduleDTO batchScheduleDTO ,
-			Errors errors , Model model)
+	public String add(@Valid  BatchScheduleDTO batchScheduleDTO ,
+			BindingResult bindingResult,Model model)
 	{
-		System.out.println("in save");
+		System.out.println(batchScheduleDTO.getStartDate() + "   "+ batchScheduleDTO.getEndDate());
+		System.out.println("in save" +bindingResult);
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("batchSchedule",batchScheduleDTO);
+			return "createBatchSchedule";
+		}
 		boolean b = batchScheduleService.insertBatchSchedule(batchScheduleDTO);
-		return "savedBatchSchedule";	
+		return "redirect:/batchSchedule/added";	
 	}
 	
 	@RequestMapping(value="/findById",method=RequestMethod.GET)
@@ -75,6 +88,20 @@ public class BatchScheduleController {
 		
 	}
 	
+	@RequestMapping(value="/added",method=RequestMethod.GET)
+	public String showAdd()
+	{
+//		model.addAttribute("batchSchedule",new BatchScheduleDTO());
+		return "batchSchedule/success";
+		
+	}
 	
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder ) {
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dataBinder.registerCustomEditor(Date.class, "startDate", new CustomDateEditor(dateFormat, false));
+		dataBinder.registerCustomEditor(Date.class, "endDate", new CustomDateEditor(dateFormat, false));
+	}
 	
 }

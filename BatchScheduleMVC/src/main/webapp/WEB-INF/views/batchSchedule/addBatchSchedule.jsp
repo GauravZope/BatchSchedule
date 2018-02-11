@@ -33,6 +33,9 @@ fieldset.for-panel legend {
 	background-color: #d9edf7;
 	margin-bottom: 0;
 }
+.danger{
+	color : red;
+}
 </style>
 
 </head>
@@ -44,25 +47,30 @@ fieldset.for-panel legend {
 					<div class="col-sm-6">
 						<div class="form-horizontal">
 							<div class="form-group row">
-								<label class="col-xs-5 control-label">Batch Id:</label>
-								<form:input cssClass="form-control input-field" path="id" />
+							<form:errors cssClass="danger" path="*" />
+								<label class="col-xs-5 control-label">Batch Code:</label>
+								<form:input cssClass="form-control input-field" path="batchCode" />
+								<form:errors cssClass="danger" path="batchCode" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-5 control-label">Trainer First Name: </label>
-								<form:input cssClass="form-control input-field"	path="trainerFirstName" />
-								<form:errors path="trainerFirstName" >Required	!!</form:errors>
+								<form:input cssClass="form-control input-field"	path="trainerDetailsDTO.personDetailsDTO.firstName" />
+								<form:errors cssClass="danger" path="trainerDetailsDTO.personDetailsDTO.firstName" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-5 control-label">Trainer Last Name:</label>
-								<form:input cssClass="form-control input-field"	path="trainerLastName" />
+								<form:input cssClass="form-control input-field"	path="trainerDetailsDTO.personDetailsDTO.lastName" />
+								<form:errors cssClass="danger" path="trainerDetailsDTO.personDetailsDTO.firstName" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-5 control-label">Center: </label>
 								<form:input cssClass="form-control input-field" path="center" />
+								<form:errors cssClass="danger" path="center" />
 							</div>
 							<div class="form-group row">							
 								<label class="col-xs-5 control-label">Lab:</label>
 								<form:input cssClass="form-control input-field" path="lab" />
+								<form:errors cssClass="danger"  path="lab" />
 							</div>
 						</div>
 					</div>
@@ -71,22 +79,27 @@ fieldset.for-panel legend {
 							<div class="form-group row">
 								<label class="col-xs-4 control-label">StartDate:</label>
 								<form:input cssClass="form-control input-field" type="date" path="startDate"  />
+								<form:errors cssClass="danger" path="startDate" />
 							</div>
 							<div class="form-group row">	
 								<label class="col-xs-4 control-label">EndDate:</label>
-      						    <form:input class="form-control" type="date"   path="endDate" />
+      						    <form:input class="form-control" type="date" path="endDate" />
+      						    <form:errors cssClass="danger" path="endDate" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-4 control-label">Batch Timing:</label>
 								<form:input cssClass="form-control input-field" path="timing" />
+								<form:errors cssClass="danger" path="timing" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-4 control-label">Duration:</label>
 								<form:input cssClass="form-control input-field" path="duration" />
+								<form:errors cssClass="danger" path="duration" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-4 control-label">Is Completed:</label>
 								<form:input cssClass="form-control input-field" path="completed" />
+								<form:errors cssClass="danger" path="completed" />
 							</div>
 						</div>
 					</div>

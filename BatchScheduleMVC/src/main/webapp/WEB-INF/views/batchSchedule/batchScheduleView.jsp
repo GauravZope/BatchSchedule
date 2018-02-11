@@ -17,9 +17,9 @@
 			<tr>
 			<thead class="table-head">
 			
-				<th>Batch Id</th>
-				<th>trainerFirstName</th>
-				<th>trainerLastName</th>
+				<th>Batch Code</th>
+				<th>Trainer firstName</th>
+				<th>Trainer lastName</th>
 				<th>center</th>
 				<th>lab</th>
 				<th>timing</th>
@@ -33,9 +33,9 @@
 			<tbody class="table-body">
 				<c:forEach var="batchScheduleDTO" items="${batchScheduleDTOList}">
 					<tr>
-						<td>${batchScheduleDTO.id} </a></td>
-						<td>${batchScheduleDTO.trainerFirstName}</td>
-						<td>${batchScheduleDTO.trainerLastName}</td>
+						<td>${batchScheduleDTO.batchCode} </a></td>
+						<td>${batchScheduleDTO.trainerDetailsDTO.personDetailsDTO.firstName}</td>
+						<td>${batchScheduleDTO.trainerDetailsDTO.personDetailsDTO.lastName}</td>
 						<td>${batchScheduleDTO.center}</td>
 						<td>${batchScheduleDTO.lab}</td>
 						<td>${batchScheduleDTO.timing}</td>

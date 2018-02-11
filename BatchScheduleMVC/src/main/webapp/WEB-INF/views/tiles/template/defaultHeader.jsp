@@ -7,7 +7,7 @@
       <li><a href="${pageContext.request.contextPath}/">Home</a></li>
       <li><a href="${pageContext.request.contextPath}/batchSchedule/showAdd">Batch Schedule</a> </li>
         <li class="dropdown" id="accountmenu">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Batch Schedule<b class="caret"></b></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">Batch Schedule<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="${pageContext.request.contextPath}/batchSchedule/showAdd">Add New Batch</a></li>
                 <li class="divider"></li>

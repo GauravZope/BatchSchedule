@@ -52,13 +52,13 @@ fieldset.for-panel legend {
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-horizontal">
-						<label class="col-xs-5 control-label">Batch Id:</label>
-						<p class="form-control-static">${ batchScheduleDTO.id }</p>
+						<label class="col-xs-5 control-label">Batch Code:</label>
+						<p class="form-control-static">${ batchScheduleDTO.batchCode }</p>
 						<label class="col-xs-5 control-label">Trainer First Name:
 						</label>
-						<p class="form-control-static">${ batchScheduleDTO.trainerFirstName }</p>
+						<p class="form-control-static">${ batchScheduleDTO.trainerDetailsDTO.personDetailsDTO.firstName }</p>
 						<label class="col-xs-5 control-label">Trainer Last Name: </label>
-						<p class="form-control-static">${ batchScheduleDTO.trainerLastName }</p>
+						<p class="form-control-static">${ batchScheduleDTO.trainerDetailsDTO.personDetailsDTO.lastName }</p>
 						<label class="col-xs-5 control-label">Center: </label>
 						<p class="form-control-static">${ batchScheduleDTO.center }</p>
 						<label class="col-xs-5 control-label">Lab:</label>
@@ -93,16 +93,16 @@ fieldset.for-panel legend {
 					<div class="col-sm-6">
 						<div class="form-horizontal">
 							<div class="form-group row">
-								<label class="col-xs-5 control-label">Batch Id:</label>
-								<form:input cssClass="form-control input-field" path="id" />
+								<label class="col-xs-5 control-label">Batch Code:</label>
+								<form:input cssClass="form-control input-field" path="batchCode" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-5 control-label">Trainer First Name: </label>
-								<form:input cssClass="form-control input-field"	path="trainerFirstName" />
+								<form:input cssClass="form-control input-field"	path="trainerDetailsDTO.personDetailsDTO.firstName" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-5 control-label">Trainer Last Name:</label>
-								<form:input cssClass="form-control input-field"	path="trainerLastName" />
+								<form:input cssClass="form-control input-field"	path="trainerDetailsDTO.personDetailsDTO.lastName" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-5 control-label">Center: </label>
@@ -118,11 +118,11 @@ fieldset.for-panel legend {
 						<div class="form-horizontal">
 							<div class="form-group row">
 								<label class="col-xs-4 control-label">StartDate:</label>
-								<form:input cssClass="form-control input-field" path="startDate" />
+								<form:input cssClass="form-control input-field" type="date" path="startDate" />
 							</div>
 							<div class="form-group row">	
 								<label class="col-xs-4 control-label">EndDate:</label>
-								<form:input cssClass="form-control input-field" path="endDate" />
+								<form:input cssClass="form-control input-field" type="date" path="endDate" />
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-4 control-label">Batch Timing:</label>
