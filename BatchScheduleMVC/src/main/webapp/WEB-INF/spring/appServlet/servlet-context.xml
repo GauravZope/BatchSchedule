@@ -35,7 +35,8 @@
 	<mvc:annotation-driven />
 	
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="classpath:messages" />
+		<property name="basename" value="messages" />
+		<!-- <property name="basename" value="/WEB-INF/messages" /> -->
 	</bean>
 	
 </beans>

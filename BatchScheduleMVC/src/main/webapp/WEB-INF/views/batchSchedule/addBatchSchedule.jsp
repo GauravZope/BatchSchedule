@@ -48,7 +48,7 @@ fieldset.for-panel legend {
 						<div class="form-horizontal">
 							<div class="form-group row">
 								<label class="col-xs-5 control-label">Batch Code:</label>
-								<form:input cssClass="form-control input-field" path="batchCode" />
+								<form:input cssClass="form-control input-field" cssErrorClass="danger" path="batchCode" />
 								<form:errors cssClass="danger" path="batchCode" />
 							</div>
 							<div class="form-group row">
