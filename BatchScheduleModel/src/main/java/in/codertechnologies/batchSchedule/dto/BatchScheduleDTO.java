@@ -9,6 +9,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 
@@ -32,10 +33,10 @@ public class BatchScheduleDTO {
 	@NotBlank @Size(min=1 , max= 40)
 	private String timing;
 	
-	@NotBlank @Future
+	 @Future
 	private Date startDate;
 	
-	@NotBlank @Future
+	@Future
 	private Date endDate;	
 	
 	private char completed;
