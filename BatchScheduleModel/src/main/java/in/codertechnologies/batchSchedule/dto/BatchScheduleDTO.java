@@ -5,9 +5,10 @@ import java.util.Date;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 
 
@@ -18,29 +19,28 @@ public class BatchScheduleDTO {
 	
 	private TrainerDetailsDTO trainerDetailsDTO;
 	
-	@NotNull @Size(min=1 , max= 4)
+	@NotBlank @Size(min=1 , max= 4)
 	@Pattern(regexp = "[A-Z]{2}[0-9]{2}")
 	private String batchCode;
 	
-	@NotNull @Size(min=1 , max= 40)
+	@NotBlank @Size(min=1 , max= 40)
 	private String center;
 	
-	@NotNull @Size(min=1 , max= 40)
+	@NotBlank @Size(min=1 , max= 40)
 	private String lab;
 	
-	@NotNull @Size(min=1 , max= 40)
+	@NotBlank @Size(min=1 , max= 40)
 	private String timing;
 	
-	@NotNull @Future
+	@NotBlank @Future
 	private Date startDate;
 	
-	@NotNull @Future
+	@NotBlank @Future
 	private Date endDate;	
 	
-	@NotNull
 	private char completed;
 	
-	@NotNull @Min(2) @Max(8)
+	@NotBlank @Min(2) @Max(8)
 	private String duration;	
 	
 	public long getId() {
