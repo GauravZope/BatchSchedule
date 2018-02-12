@@ -33,13 +33,13 @@ public class BatchScheduleController {
 	private BatchScheduleService batchScheduleService;
 	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
-	public String add(@Valid  BatchScheduleDTO batchScheduleDTO ,
-			BindingResult bindingResult,Model model)
+	public String add(@Valid @ModelAttribute("batchSchedule") BatchScheduleDTO batchScheduleDTO ,
+			BindingResult bindingResult)
 	{
 		System.out.println(batchScheduleDTO.getStartDate() + "   "+ batchScheduleDTO.getEndDate());
 		System.out.println("in save" +bindingResult);
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("batchSchedule",batchScheduleDTO);
+//			model.addAttribute("batchSchedule",batchScheduleDTO);
 			return "createBatchSchedule";
 		}
 		boolean b = batchScheduleService.insertBatchSchedule(batchScheduleDTO);
@@ -52,7 +52,7 @@ public class BatchScheduleController {
 		BatchScheduleDTO batchScheduleDTO =  new BatchScheduleDTO();
 		batchScheduleDTO.setId(id);
 		
-		 batchScheduleDTO = batchScheduleService.findBatchScheduleById(batchScheduleDTO);
+	 batchScheduleDTO = batchScheduleService.findBatchScheduleById(batchScheduleDTO);
 		model.addAttribute("batchScheduleDTO", batchScheduleDTO);
 		return "findByIdBatchSchedule";
 	}
