@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 <c:url value="/batchSchedule/add" var="addLink" ></c:url>
-
-
+<spring:url value="/resources/js/batchschedule/batchScheduleExternal.js" var="batchScheduleExternalJS"/>
+<SCRIPT  TYPE="text/javascript" src="${ batchScheduleExternalJS}"></SCRIPT>
 <style type="text/css">
 fieldset.for-panel {
 	background-color: #fcfcfc !important;
@@ -39,7 +39,7 @@ fieldset.for-panel legend {
 </style>
 
 </head>
-<body>
+<body onload="onload();">
 	<fieldset class="for-panel">
 			<legend>Add Batch Schedule</legend>
 			<form:form action="${ addLink }" modelAttribute="batchSchedule">
@@ -58,7 +58,7 @@ fieldset.for-panel legend {
 							</div>
 							<div class="form-group row">
 								<label class="col-xs-5 control-label">Trainer Last Name:</label>
-								<form:input cssClass="form-control input-field"	path="trainerDetailsDTO.personDetailsDTO.lastName" />
+								<form:input type="hidden"  id="costCenterTypeHeaderId" path="trainerDetailsDTO.personDetailsDTO.firstName"/>
 								<form:errors cssClass="danger" path="trainerDetailsDTO.personDetailsDTO.firstName" />
 							</div>
 							<div class="form-group row">

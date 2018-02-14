@@ -31,12 +31,14 @@
 		<property name="order" value="1" />
 	</bean>
 	
-	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"></mvc:resources>
 	<mvc:annotation-driven />
 	
-	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="messages" />
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<!-- <property name="basename" value="messages" /> -->
 		<!-- <property name="basename" value="/WEB-INF/messages" /> -->
+		<property name="basename" value="classpath:messages" />
+		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 	
+	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"></mvc:resources>
 </beans>

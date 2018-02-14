@@ -12,11 +12,15 @@
 <c:url value="/resources/js/bootstrap.min.js" var="bootstrapJS"></c:url>
 <c:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS"></c:url>
 <c:url value="/resources/css/app.css" var="appCSS"></c:url>
+<c:url value="/resources/select2/select2.css" var="select2css"></c:url>
+<c:url value="/resources/select2/select2.js" var="select2js"></c:url>
 
 <link rel="stylesheet" href="${ bootstrapCSS }" />
 <link rel="stylesheet" href="${ appCSS }" />
 <SCRIPT  TYPE="text/javascript" src="${ jquery110}"></SCRIPT>
 <SCRIPT TYPE="text/javascript" src="${ bootstrapJS}"></SCRIPT>
+<link rel="stylesheet" href="${ select2css }" />
+<SCRIPT  TYPE="text/javascript" src="${ select2js}"></SCRIPT>
 </head>
  
 <body>
