@@ -6,7 +6,7 @@ public class PersonDetailsDTO {
 
 	private long personDetailsId;
 	private AcademicDetailsDTO detailsDTO;
-	private CityTownDTO cityTownDTO;
+	private CityMstDTO cityMstDTO;
 	private StateMstDTO stateMstDTO;
 	private String firstName;
 	private String lastName;
@@ -38,12 +38,6 @@ public class PersonDetailsDTO {
 	}
 	public void setDetailsDTO(AcademicDetailsDTO detailsDTO) {
 		this.detailsDTO = detailsDTO;
-	}
-	public CityTownDTO getCityTownDTO() {
-		return cityTownDTO;
-	}
-	public void setCityTownDTO(CityTownDTO cityTownDTO) {
-		this.cityTownDTO = cityTownDTO;
 	}
 	public StateMstDTO getStateMstDTO() {
 		return stateMstDTO;
@@ -164,6 +158,23 @@ public class PersonDetailsDTO {
 	}
 	public void setIsActive(Character isActive) {
 		this.isActive = isActive;
+	}
+	@Override
+	public String toString() {
+		return "PersonDetailsDTO [personDetailsId=" + personDetailsId + ", detailsDTO=" + detailsDTO + ", cityTownDTO="
+				+ cityMstDTO + ", stateMstDTO=" + stateMstDTO + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", fatherName=" + fatherName + ", motherName=" + motherName + ", dateOfBirth=" + dateOfBirth
+				+ ", gender=" + gender + ", emailId=" + emailId + ", mobileNo=" + mobileNo + ", password=" + password
+				+ ", addressLine1=" + addressLine1 + ", addressLine2=" + addressLine2 + ", pinCode=" + pinCode
+				+ ", district=" + district + ", aadhaarCardApplicable=" + aadhaarCardApplicable + ", aadhaarCardNo="
+				+ aadhaarCardNo + ", createdDate=" + createdDate + ", modifiedDate=" + modifiedDate + ", profile="
+				+ profile + ", isActive=" + isActive + "]";
+	}
+	public CityMstDTO getCityMstDTO() {
+		return cityMstDTO;
+	}
+	public void setCityMstDTO(CityMstDTO cityMstDTO) {
+		this.cityMstDTO = cityMstDTO;
 	}
 	
 	

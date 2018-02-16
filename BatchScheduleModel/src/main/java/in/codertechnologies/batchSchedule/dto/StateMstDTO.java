@@ -24,6 +24,10 @@ public class StateMstDTO {
 	public void setStateName(String stateName) {
 		this.stateName = stateName;
 	}
+	@Override
+	public String toString() {
+		return "StateMstDTO [stateId=" + stateId + ", stateCode=" + stateCode + ", stateName=" + stateName + "]";
+	}
 	
 	
 }

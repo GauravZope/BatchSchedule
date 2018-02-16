@@ -73,6 +73,14 @@ public class AcademicDetailsDTO {
 	public void setDiploma(String diploma) {
 		this.diploma = diploma;
 	}
+	@Override
+	public String toString() {
+		return "AcademicDetailsDTO [academicDetailsId=" + academicDetailsId + ", graduation=" + graduation
+				+ ", graduationPercentage=" + graduationPercentage + ", graduationYear=" + graduationYear
+				+ ", graduationDuration=" + graduationDuration + ", masterDegree=" + masterDegree
+				+ ", masterPercentage=" + masterPercentage + ", masterYear=" + masterYear + ", masterDuration="
+				+ masterDuration + ", diploma=" + diploma + "]";
+	}
 	
 	
 	

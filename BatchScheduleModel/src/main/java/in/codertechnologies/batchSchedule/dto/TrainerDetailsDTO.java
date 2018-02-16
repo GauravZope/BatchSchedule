@@ -79,5 +79,13 @@ public class TrainerDetailsDTO {
 	public void setProjects(String projects) {
 		this.projects = projects;
 	}
+	@Override
+	public String toString() {
+		return "TrainerDetailsDTO [trainerDetailsId=" + trainerDetailsId + ", personDetailsDTO=" + personDetailsDTO
+				+ ", trainerCode=" + trainerCode + ", title=" + title + ", areasOfSpecialization="
+				+ areasOfSpecialization + ", department=" + department + ", officeLocation=" + officeLocation
+				+ ", officeTelephone=" + officeTelephone + ", experience=" + experience + ", researchInterests="
+				+ researchInterests + ", projects=" + projects + "]";
+	}
 	
 }

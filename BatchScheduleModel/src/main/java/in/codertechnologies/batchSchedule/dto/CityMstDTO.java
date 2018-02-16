@@ -1,6 +1,6 @@
 package in.codertechnologies.batchSchedule.dto;
 
-public class CityTownDTO {
+public class CityMstDTO {
 
 	private long cityId;
 	private StateMstDTO stateMstDTO;
@@ -29,6 +29,11 @@ public class CityTownDTO {
 	}
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
+	}
+	@Override
+	public String toString() {
+		return "CityDTO [cityId=" + cityId + ", stateMstDTO=" + stateMstDTO + ", cityCode=" + cityCode + ", cityName="
+				+ cityName + "]";
 	}
 	
 	
