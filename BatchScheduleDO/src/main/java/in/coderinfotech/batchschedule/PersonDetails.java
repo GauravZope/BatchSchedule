@@ -44,6 +44,19 @@ public class PersonDetails implements java.io.Serializable {
 	private String district;
 	private Character aadhaarCardApplicable;
 	private String aadhaarCardNo;
+	@Override
+	public String toString() {
+		return "PersonDetails [personDetailsId=" + personDetailsId + ", academicDetails=" + academicDetails
+				+ ", cityMst=" + cityMst + ", stateMst=" + stateMst + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", fatherName=" + fatherName + ", motherName=" + motherName + ", dateOfBirth="
+				+ dateOfBirth + ", gender=" + gender + ", emailId=" + emailId + ", mobileNo=" + mobileNo + ", password="
+				+ password + ", addressLine1=" + addressLine1 + ", addressLine2=" + addressLine2 + ", pinCode="
+				+ pinCode + ", district=" + district + ", aadhaarCardApplicable=" + aadhaarCardApplicable
+				+ ", aadhaarCardNo=" + aadhaarCardNo + ", createdDate=" + createdDate + ", modifiedDate=" + modifiedDate
+				+ ", profile=" + profile + ", isActive=" + isActive + ", trainerDetailses=" + trainerDetailses
+				+ ", studentDetailses=" + studentDetailses + "]";
+	}
+
 	private Date createdDate;
 	private Date modifiedDate;
 	private Character profile;

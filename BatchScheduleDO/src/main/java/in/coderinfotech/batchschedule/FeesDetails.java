@@ -102,4 +102,11 @@ public class FeesDetails implements java.io.Serializable {
 		this.tuitionFeesRemaining = tuitionFeesRemaining;
 	}
 
+	@Override
+	public String toString() {
+		return "FeesDetails [feesDetailsId=" + feesDetailsId + ", studentDetails=" + studentDetails + ", feesPaidDate="
+				+ feesPaidDate + ", feesReceiptNo=" + feesReceiptNo + ", amount=" + amount + ", tuitionFeesRemaining="
+				+ tuitionFeesRemaining + "]";
+	}
+
 }

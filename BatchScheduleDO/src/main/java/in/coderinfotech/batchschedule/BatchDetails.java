@@ -168,4 +168,12 @@ public class BatchDetails implements java.io.Serializable {
 		this.trainerDetails = trainerDetails;
 	}
 
+	@Override
+	public String toString() {
+		return "BatchDetails [batchId=" + batchId + ", batchName=" + batchName + ", trainerDetails=" + trainerDetails
+				+ ", startDate=" + startDate + ", endDate=" + endDate + ", duration=" + duration + ", timing=" + timing
+				+ ", center=" + center + ", lab=" + lab + ", capacity=" + capacity + ", batchSchedule=" + batchSchedule
+				+ ", isCompleted=" + isCompleted + "]";
+	}
+
 }

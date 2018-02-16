@@ -66,4 +66,10 @@ public class StudentDetails implements java.io.Serializable {
 		this.feesDetailses = feesDetailses;
 	}
 
+	@Override
+	public String toString() {
+		return "StudentDetails [studentId=" + studentId + ", personDetails=" + personDetails + ", feesDetailses="
+				+ feesDetailses + "]";
+	}
+
 }

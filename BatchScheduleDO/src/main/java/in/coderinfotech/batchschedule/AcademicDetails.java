@@ -154,4 +154,13 @@ public class AcademicDetails implements java.io.Serializable {
 		this.personDetailses = personDetailses;
 	}
 
+	@Override
+	public String toString() {
+		return "AcademicDetails [academicDetailsId=" + academicDetailsId + ", graduation=" + graduation
+				+ ", graduationPercentage=" + graduationPercentage + ", graduationYear=" + graduationYear
+				+ ", graduationDuration=" + graduationDuration + ", masterDegree=" + masterDegree
+				+ ", masterPercentage=" + masterPercentage + ", masterYear=" + masterYear + ", masterDuration="
+				+ masterDuration + ", diploma=" + diploma + ", personDetailses=" + personDetailses + "]";
+	}
+
 }

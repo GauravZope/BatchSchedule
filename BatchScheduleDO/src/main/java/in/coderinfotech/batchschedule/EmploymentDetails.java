@@ -98,4 +98,11 @@ public class EmploymentDetails implements java.io.Serializable {
 		this.payWithScaleOfPay = payWithScaleOfPay;
 	}
 
+	@Override
+	public String toString() {
+		return "EmploymentDetails [employmentDetailsId=" + employmentDetailsId + ", employer=" + employer
+				+ ", positionHeld=" + positionHeld + ", dateOfJoining=" + dateOfJoining + ", dateOfLeaving="
+				+ dateOfLeaving + ", payWithScaleOfPay=" + payWithScaleOfPay + "]";
+	}
+
 }

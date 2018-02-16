@@ -86,4 +86,10 @@ public class StateMst implements java.io.Serializable {
 		this.cityMsts = cityMsts;
 	}
 
+	@Override
+	public String toString() {
+		return "StateMst [stateId=" + stateId + ", stateCode=" + stateCode + ", stateName=" + stateName
+				+ ", personDetailses=" + personDetailses + ", cityMsts=" + cityMsts + "]";
+	}
+
 }

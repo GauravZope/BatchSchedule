@@ -89,4 +89,10 @@ public class CityMst implements java.io.Serializable {
 		this.personDetailses = personDetailses;
 	}
 
+	@Override
+	public String toString() {
+		return "CityMst [cityId=" + cityId + ", stateMst=" + stateMst + ", cityCode=" + cityCode + ", cityName="
+				+ cityName + ", personDetailses=" + personDetailses + "]";
+	}
+
 }

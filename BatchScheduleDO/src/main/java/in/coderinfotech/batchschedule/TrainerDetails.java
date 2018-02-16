@@ -153,4 +153,13 @@ public class TrainerDetails implements java.io.Serializable {
 		this.projects = projects;
 	}
 
+	@Override
+	public String toString() {
+		return "TrainerDetails [trainerDetailsId=" + trainerDetailsId + ", personDetails=" + personDetails
+				+ ", trainerCode=" + trainerCode + ", title=" + title + ", areasOfSpecialization="
+				+ areasOfSpecialization + ", department=" + department + ", officeLocation=" + officeLocation
+				+ ", officeTelephone=" + officeTelephone + ", experience=" + experience + ", researchInterests="
+				+ researchInterests + ", projects=" + projects + "]";
+	}
+
 }
