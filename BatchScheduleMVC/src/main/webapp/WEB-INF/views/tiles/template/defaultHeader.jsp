@@ -14,6 +14,7 @@
                 <li><a href="${pageContext.request.contextPath}/batchSchedule/findAllBatchSchedule">Get All Batches</a></li>
             </ul>
         </li>
+        <li><a href="${pageContext.request.contextPath}/personDetails/showAdd">Add a New Person</a> </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

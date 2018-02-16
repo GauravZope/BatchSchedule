@@ -153,3 +153,33 @@ padding-bottom: 2%
     width: 30px;
     height: 35px;
 }
+fieldset.for-panel {
+	background-color: #fcfcfc !important;
+	border: 2px solid #999;
+	border-radius: 4px;
+	padding: 15px 10px;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	background-color: #f9fdfd;
+	margin-bottom: 12px;
+	padding-left: 75px;
+	padding-right: 10px;
+}
+
+fieldset.for-panel legend {
+	background-color: #fafafa;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	color: #4381ba;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 10px;
+	margin: inherit;
+	padding: 7px;
+	width: auto;
+	background-color: #d9edf7;
+	margin-bottom: 0;
+}
+.danger{
+	color : red;
+}

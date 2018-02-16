@@ -31,29 +31,35 @@
        <put-attribute name="body" value="/WEB-INF/views/batchSchedule/success.jsp" />  
    </definition>  
 
-	<!-- Create Batch Schedule Page -->
    <definition name="createBatchSchedule" extends="base-definition">  
-       <put-attribute name="title" value="Contact Us" />  
+       <put-attribute name="title" value="Create Batch" />  
        <put-attribute name="body" value="/WEB-INF/views/batchSchedule/addBatchSchedule.jsp" />  
    </definition>  
    
-   	<!-- Create Batch Schedule Page -->
    <definition name="findByIdBatchSchedule" extends="base-definition">  
-       <put-attribute name="title" value="Contact Us" />  
+       <put-attribute name="title" value="Batch Details" />  
        <put-attribute name="body" value="/WEB-INF/views/batchSchedule/batchSchedule.jsp" />  
    </definition>  
    
-   
-   	<!-- Create Batch Schedule Page -->
-   <definition name="savedBatchSchedule" extends="base-definition">  
-       <put-attribute name="title" value="Contact Us" />  
-       <put-attribute name="body" value="/WEB-INF/views/batchSchedule/added.jsp" />  
-   </definition>  
-   
-   	<!-- Create Batch Schedule Page -->
    <definition name="findAllBatchSchedule" extends="base-definition">  
-       <put-attribute name="title" value="Contact Us" />  
+       <put-attribute name="title" value="All Batch Details" />  
        <put-attribute name="body" value="/WEB-INF/views/batchSchedule/batchScheduleView.jsp" />  
    </definition>  
+   
+   
+   <definition name="createPersonDetails" extends="base-definition">  
+       <put-attribute name="Create Batch" value="Add New Person" />  
+       <put-attribute name="body" value="/WEB-INF/views/personInfo/addPersonInfo.jsp" />  
+   </definition>  
+   
+   <definition name="findByIdPersonDetails" extends="base-definition">  
+       <put-attribute name="Batch Details" value="Person Details" />  
+       <put-attribute name="body" value="/WEB-INF/views/personInfo/personDetails.jsp" />  
+   </definition>  
+   
+   <definition name="findAllPersonDetails" extends="base-definition">  
+       <put-attribute name="All Batches" value="All People Records" />  
+       <put-attribute name="body" value="/WEB-INF/views/personInfo/viewAllPersonDetails.jsp" />  
+   </definition>
  
 </tiles-definitions>
