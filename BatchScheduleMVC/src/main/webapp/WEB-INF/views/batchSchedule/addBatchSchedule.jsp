@@ -3,11 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 <c:url value="/batchSchedule/add" var="addLink" ></c:url>
+<c:url value="/cityMstController/selectCity" var="selectCity" ></c:url>
+
 <spring:url value="/resources/js/batchschedule/batchScheduleExternal.js" var="batchScheduleExternalJS"/>
 <SCRIPT  TYPE="text/javascript" src="${ batchScheduleExternalJS}"></SCRIPT>
-<style type="text/css">
-
-</style>
 
 </head>
 <body onload="onload();">
