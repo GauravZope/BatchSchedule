@@ -70,7 +70,7 @@ public class CityMstDaoImpl implements CityMstDAO{
 	public List getCityMstCodeList(PaginationDetailsDTO paginationDetailsDTO) {
 		List cityMasterDTOList = new ArrayList();
 		
-			List<CityMst> cityMasterListDO = sessionFactory.getCurrentSession().createCriteria(CityMst.class)
+			List cityMasterListDO = sessionFactory.getCurrentSession().createCriteria(CityMst.class)
 								.add(Restrictions.or(Restrictions.like("cityName", paginationDetailsDTO.getSearchTerm()+"%"),Restrictions.like("cityCode", "%"+paginationDetailsDTO.getSearchTerm()+"%")))
 								.setProjection(Projections.projectionList()
 										.add(Projections.property("cityId"))
@@ -78,7 +78,7 @@ public class CityMstDaoImpl implements CityMstDAO{
 										.add(Projections.property("cityCode")))
 								.setFirstResult(new Long((paginationDetailsDTO.getPageNo() - 1 )* paginationDetailsDTO.getPageSize()).intValue())
 							    .setMaxResults(new Long(paginationDetailsDTO.getPageSize()).intValue())
-							    .addOrder(Order.asc("code"))
+							    .addOrder(Order.asc("cityCode"))
 								.list();
 			
 			if(cityMasterListDO != null){
@@ -89,9 +89,13 @@ public class CityMstDaoImpl implements CityMstDAO{
 				}
 				paginationDetailsDTO.setTotalCount(cityMasterListDO.size());	
 				
-				ModelMapper modelMapper = new ModelMapper();
-				for (CityMst cityMst : cityMasterListDO) {
-					cityMasterDTOList.add(modelMapper.map(cityMst, CityMstDTO.class));
+				for(Iterator iterator = cityMasterListDO.iterator();iterator.hasNext();) {
+					Object[] cityMst = (Object[])iterator.next();
+					CityMstDTO cityMstDTO = new CityMstDTO();
+					cityMstDTO.setCityId(Long.valueOf(cityMst[0].toString()));
+					cityMstDTO.setCityCode(cityMst[1].toString());
+					cityMstDTO.setCityName(cityMst[2].toString());
+					cityMasterDTOList.add(cityMstDTO);
 				}
 			}else{
 				paginationDetailsDTO.setMorePages(false);
