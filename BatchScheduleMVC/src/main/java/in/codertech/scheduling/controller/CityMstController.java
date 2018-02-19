@@ -78,7 +78,7 @@ public class CityMstController {
 		return "cityMst/success";
 	}
 
-	@RequestMapping(value="/selectCity",method=RequestMethod.GET)
+	@RequestMapping(value="/selectCity",method=RequestMethod.POST)
 	@ResponseBody
 	public String getSelect2ListFromAjaxForCity(@RequestParam Long pageSize,@RequestParam Long page,@RequestParam String searchTerm){
 

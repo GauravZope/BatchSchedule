@@ -1,16 +1,33 @@
 var j = jQuery.noConflict();
-
+var vendorPageSize = 25;
+var vendorPageNo = 1;
 function onload(){
-	loadStateSelect2();
+	var cityUrl = "${ selectCity }";
 	j("#cityTownFieldId").select2({
-		placeholder: "Select City",
-		width: '170px',
-		data:{ results: '', text: 'name' },
-		formatResult: function(result) {
-			if ( ! isJsonString(result.id))
-				result.id = JSON.stringify(result.id);
-			return result.name;
-		}
+		placeholder: "Select a City",
+    	minimumInputLength: 2,
+        initSelection: function(el, fn) {
+        },
+	    ajax: {
+	        url: "/BatchScheduleMVC/cityMstController/selectCity",
+	        dataType: 'json',
+	        type: "POST",
+	        quietMillis: 50,
+	        data: function (term) {
+	   	        return {
+	   	          searchTerm: term, // search term
+	   	          pageSize: vendorPageSize,
+	   	          page: vendorPageNo
+	   	        };
+	        },
+	        results: function (data,page) {
+	        	vendorPageNo = page;
+	            return {
+	                results: data.result
+	                , more: data.more
+	            };
+	        }
+	    }
 	});
 //	j("#cityTownFieldId").select2("val", gridSupportLoc);
 	j("#cityTownFieldId").change(function() {
@@ -21,14 +38,30 @@ function onload(){
 
 function loadStateSelect2() {
 	j("#stateFieldId").select2({
-		placeholder: "Select State",
-		width: '170px',
-		data:{ results: '', text: 'name' },
-		formatResult: function(result) {
-			if ( ! isJsonString(result.id))
-				result.id = JSON.stringify(result.id);
-			return result.name;
-		}
+		placeholder: "Select a City",
+    	minimumInputLength: 2,
+        initSelection: function(el, fn) {
+        },
+	    ajax: {
+	        url: "/BatchScheduleMVC/cityMstController/selectCity",
+	        dataType: 'json',
+	        type: "POST",
+	        quietMillis: 50,
+	        data: function (term) {
+	   	        return {
+	   	          searchTerm: term, // search term
+	   	          pageSize: vendorPageSize,
+	   	          page: vendorPageNo
+	   	        };
+	        },
+	        results: function (data,page) {
+	        	vendorPageNo = page;
+	            return {
+	                results: data.result
+	                , more: data.more
+	            };
+	        }
+	    }
 	});
 //	j("#stateFieldId").select2("val", gridSupportLoc);
 	j("#stateFieldId").change(function() {

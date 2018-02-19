@@ -3,9 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 <c:url value="/personDetails/add" var="addLink" ></c:url>
+<c:url value="/cityMstController/selectCity" var="selectCity" ></c:url>
 <spring:url value="/resources/js/personInfo/personInfoExternal.js" var="batchScheduleExternalJS"/>
 <SCRIPT  TYPE="text/javascript" src="${ batchScheduleExternalJS}"></SCRIPT>
-
+<c:url var="home" value="/" scope="request" />
 </head>
 <body onload="onload();">
 	<fieldset class="for-panel">
