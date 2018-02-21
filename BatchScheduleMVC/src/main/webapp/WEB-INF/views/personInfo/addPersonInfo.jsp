@@ -62,7 +62,7 @@
 							</div>
 							<div class="form-group row">	
 								<label class="col-xs-4 control-label">Address Line 2:</label>
-      						    <form:input class="form-control input-field"  path="addressLine2" />
+      						    <form:textarea	 class="form-control input-field"  path="addressLine2" />
       						    <form:errors cssClass="danger" path="addressLine2" />
 							</div>
 							<div class="form-group row">

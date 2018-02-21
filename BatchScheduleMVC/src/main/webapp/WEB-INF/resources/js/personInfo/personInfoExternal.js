@@ -2,6 +2,7 @@ var j = jQuery.noConflict();
 var vendorPageSize = 25;
 var vendorPageNo = 1;
 function onload(){
+	loadStateSelect2()
 	var cityUrl = "${ selectCity }";
 	j("#cityTownFieldId").select2({
 		placeholder: "Select a City",
@@ -38,12 +39,13 @@ function onload(){
 
 function loadStateSelect2() {
 	j("#stateFieldId").select2({
-		placeholder: "Select a City",
+		 placeholder: "Select a state",
+		 allowClear: true,
     	minimumInputLength: 2,
         initSelection: function(el, fn) {
         },
 	    ajax: {
-	        url: "/BatchScheduleMVC/cityMstController/selectCity",
+	        url: "/BatchScheduleMVC/stateMstController/selectState",
 	        dataType: 'json',
 	        type: "POST",
 	        quietMillis: 50,
