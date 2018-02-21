@@ -2,6 +2,7 @@ package in.codertechnologies.repository.dao;
 
 import java.util.List;
 
+import in.codertechnologies.batchSchedule.dto.PaginationDetailsDTO;
 import in.codertechnologies.batchSchedule.dto.StateMstDTO;
 
 public interface StateMstDAO {
@@ -14,4 +15,6 @@ public interface StateMstDAO {
 	List<StateMstDTO>  findAllStateMst();
 	
 	boolean deleteStateMstById(StateMstDTO stateMstDTO);
+
+	List<StateMstDTO> getStateMstCodeList(PaginationDetailsDTO paginationDetailsDTO);
 }

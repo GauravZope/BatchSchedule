@@ -1,15 +1,22 @@
 package in.codertechnologies.repository.dao.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import in.coderinfotech.batchschedule.CityMst;
 import in.coderinfotech.batchschedule.StateMst;
+import in.codertechnologies.batchSchedule.dto.CityMstDTO;
+import in.codertechnologies.batchSchedule.dto.PaginationDetailsDTO;
 import in.codertechnologies.batchSchedule.dto.StateMstDTO;
 import in.codertechnologies.repository.dao.StateMstDAO;
 
@@ -61,4 +68,41 @@ public class StateMstDaoImpl implements StateMstDAO{
 		return true;
 	}
 	
+	@Override
+	public List getStateMstCodeList(PaginationDetailsDTO paginationDetailsDTO) {
+		List stateMstDTOList = new ArrayList();
+		
+			List StateMstListDO = sessionFactory.getCurrentSession().createCriteria(StateMst.class)
+								.add(Restrictions.or(Restrictions.like("stateName", paginationDetailsDTO.getSearchTerm()+"%"),Restrictions.like("stateCode", "%"+paginationDetailsDTO.getSearchTerm()+"%")))
+								.setProjection(Projections.projectionList()
+										.add(Projections.property("stateId"))
+										.add(Projections.property("stateName"))
+										.add(Projections.property("stateCode")))
+								.setFirstResult(new Long((paginationDetailsDTO.getPageNo() - 1 )* paginationDetailsDTO.getPageSize()).intValue())
+							    .setMaxResults(new Long(paginationDetailsDTO.getPageSize()).intValue())
+							    .addOrder(Order.asc("stateCode"))
+								.list();
+			
+			if(StateMstListDO != null){
+				if(StateMstListDO.size() == paginationDetailsDTO.getPageSize()){
+					paginationDetailsDTO.setMorePages(true);
+				}else{
+					paginationDetailsDTO.setMorePages(false);
+				}
+				paginationDetailsDTO.setTotalCount(StateMstListDO.size());	
+				
+				for(Iterator iterator = StateMstListDO.iterator();iterator.hasNext();) {
+					Object[] stateMst = (Object[])iterator.next();
+					StateMstDTO stateMstDTO = new StateMstDTO();
+					stateMstDTO.setStateId(Long.valueOf(stateMst[0].toString()));
+					stateMstDTO.setStateName(stateMst[1].toString());
+					stateMstDTO.setStateCode(stateMst[2].toString());
+					stateMstDTOList.add(stateMstDTO);
+				}
+			}else{
+				paginationDetailsDTO.setMorePages(false);
+			}
+			
+		return stateMstDTOList;
+	}
 }

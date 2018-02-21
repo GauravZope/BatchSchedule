@@ -13,6 +13,9 @@ public class BatchUtility {
 		if (CommonUtils.validateForZero(batchScheduleDto.getId())) {
 			batchDetails.setBatchId(batchScheduleDto.getId());
 		}
+		if(CommonUtils.validateStringForNullSize(batchScheduleDto.getBatchCode())) {
+			batchDetails.setBatchName(batchScheduleDto.getBatchCode());
+		}
 		if(CommonUtils.validateStringForNullSize(batchScheduleDto.getCenter())) {
 			batchDetails.setCenter(batchScheduleDto.getCenter());
 		}
