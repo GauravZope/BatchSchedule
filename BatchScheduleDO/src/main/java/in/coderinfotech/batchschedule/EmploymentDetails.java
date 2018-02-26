@@ -4,6 +4,8 @@ package in.coderinfotech.batchschedule;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -41,7 +43,7 @@ public class EmploymentDetails implements java.io.Serializable {
 	}
 
 	@Id
-
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "EMPLOYMENT_DETAILS_ID", unique = true, nullable = false)
 	public long getEmploymentDetailsId() {
 		return this.employmentDetailsId;

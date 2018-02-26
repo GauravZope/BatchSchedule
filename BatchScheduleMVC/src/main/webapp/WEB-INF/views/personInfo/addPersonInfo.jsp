@@ -38,7 +38,7 @@
 							<div class="form-group row">							
 								<label class="col-xs-5 control-label">Gender:</label>
 								<form:radiobutton cssClass="" value="M" path="gender" />&nbsp;&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;
-								<form:radiobutton cssClass="" value="f" path="gender" />&nbsp;&nbsp;Female
+								<form:radiobutton cssClass="" value="F" path="gender" />&nbsp;&nbsp;Female
 								<form:errors cssClass="danger"  path="gender" />
 							</div>
 							<div class="form-group row">							

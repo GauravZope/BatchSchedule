@@ -2,26 +2,67 @@ package in.codertechnologies.batchSchedule.dto;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 public class PersonDetailsDTO {
 
 	private long personDetailsId;
 	private AcademicDetailsDTO detailsDTO;
+	@NotNull
 	private CityMstDTO cityMstDTO;
+	@NotNull
 	private StateMstDTO stateMstDTO;
+	@NotBlank
+	@Size(min=1 , max= 40)
 	private String firstName;
+	@NotBlank
+	@Size(min=1 , max= 40)
 	private String lastName;
+	@NotBlank
+	@Size(min=1 , max= 40)
 	private String fatherName;
 	private String motherName;
+	@NotBlank
+	@Past
 	private Date dateOfBirth;
+	/*@NotBlank
+	@Pattern(regexp = "^[M|F]{1}$")*/
 	private Character gender;
+	@NotBlank
+	@Email
+	@Size(min=1 , max= 40)
 	private String emailId;
+	@NotBlank
+	/*@Pattern(regexp = "/^\\d{10}$/")*/
+	@Size(min=1 , max= 10)
 	private String mobileNo;
+	@NotBlank
+	@Size(min=1 , max= 10)
 	private String password;
+	@NotBlank
+	@Size(min=1 , max= 100)
 	private String addressLine1;
+	@NotBlank
+	@Size(min=1 , max= 100)
 	private String addressLine2;
+	@NotBlank
+	/*@Pattern(regexp = "/^\\d{6}$/")*/
+	/*@Size(min=1 , max= 6)*/
 	private Long pinCode;
+	@NotBlank
+	@Size(min=1 , max= 40)
 	private String district;
+	/*@NotBlank
+	@Pattern(regexp = "^[Y|N]{1}$")*/
 	private Character aadhaarCardApplicable;
+	@NotBlank
+	/*@Pattern(regexp = "/^\\d{12}$/")*/
+	@Size(min=1 , max= 40)
 	private String aadhaarCardNo;
 	private Date createdDate;
 	private Date modifiedDate;
@@ -176,6 +217,6 @@ public class PersonDetailsDTO {
 	public void setCityMstDTO(CityMstDTO cityMstDTO) {
 		this.cityMstDTO = cityMstDTO;
 	}
-	
-	
+
+
 }

@@ -1,6 +1,6 @@
 
 CREATE TABLE city_mst (                                                                                                                                  
-	CITY_ID bigint(20) NOT NULL DEFAULT 0,
+	CITY_ID bigint(20) NOT NULL AUTO_INCREMENT,
 	CITY_CODE varchar(35) DEFAULT NULL,
 	CITY_NAME varchar(50) DEFAULT NULL,
 	STATE_ID bigint(20) DEFAULT NULL,    
@@ -9,7 +9,7 @@ CREATE TABLE city_mst (
 );
 
 CREATE TABLE state_mst (                                                                       
-	STATE_ID bigint(20) NOT NULL DEFAULT 0,                                                    
+	STATE_ID bigint(20) NOT NULL AUTO_INCREMENT,                                                    
 	STATE_CODE varchar(35) DEFAULT NULL,                                                         
 	STATE_NAME varchar(35) DEFAULT NULL,                                                         
 	PRIMARY KEY (STATE_ID)                                                                      
@@ -17,7 +17,7 @@ CREATE TABLE state_mst (
 
 
 CREATE TABLE academic_details (                                                                       
-	ACADEMIC_DETAILS_ID BIGINT(20) NOT NULL DEFAULT 0,                                                    
+	ACADEMIC_DETAILS_ID BIGINT(20) NOT NULL AUTO_INCREMENT,                                                    
 	GRADUATION VARCHAR(35) DEFAULT NULL,   
 	GRADUATION_PERCENTAGE VARCHAR(35) DEFAULT NULL,   
 	GRADUATION_YEAR VARCHAR(35) DEFAULT NULL,   
@@ -31,7 +31,7 @@ CREATE TABLE academic_details (
 );
 
 CREATE TABLE person_details (                         
-     PERSON_DETAILS_ID BIGINT(20) NOT NULL DEFAULT '0',  
+     PERSON_DETAILS_ID BIGINT(20) NOT NULL AUTO_INCREMENT,  
      FIRST_NAME VARCHAR(50) DEFAULT NULL,                              
      LAST_NAME VARCHAR(50) DEFAULT NULL,                        
      FATHER_NAME VARCHAR(50) DEFAULT NULL,             
@@ -62,7 +62,7 @@ CREATE TABLE person_details (
 
 
 CREATE TABLE employment_details (                                                                       
-	EMPLOYMENT_DETAILS_ID BIGINT(20) NOT NULL DEFAULT 0,                                                    
+	EMPLOYMENT_DETAILS_ID BIGINT(20) AUTO_INCREMENT,                                                    
 	EMPLOYER VARCHAR(100) DEFAULT NULL,   
 	POSITION_HELD VARCHAR(50) DEFAULT NULL,   
 	DATE_OF_JOINING DATE DEFAULT NULL,  
@@ -72,7 +72,7 @@ CREATE TABLE employment_details (
 );
 
 CREATE TABLE trainer_details (                                                                       
-	TRAINER_DETAILS_ID BIGINT(20) NOT NULL DEFAULT 0,   
+	TRAINER_DETAILS_ID BIGINT(20) NOT NULL AUTO_INCREMENT,   
 	TRAINER_CODE VARCHAR(35) DEFAULT NULL,   
 	TRAINER_PERSON_DETAILS_ID BIGINT(20) DEFAULT NULL,
 	TITLE VARCHAR(35) DEFAULT NULL,   
@@ -89,7 +89,7 @@ CREATE TABLE trainer_details (
 
 
 create table student_details (
-	STUDENT_ID BIGINT(20) NOT NULL DEFAULT 0,
+	STUDENT_ID BIGINT(20) NOT NULL AUTO_INCREMENT,
 	STUDENT_PERSON_DETAILS_ID BIGINT(20) DEFAULT NULL,
 	PRIMARY KEY (STUDENT_ID),
 	FOREIGN KEY (STUDENT_PERSON_DETAILS_ID) REFERENCES person_details (PERSON_DETAILS_ID)
@@ -97,7 +97,7 @@ create table student_details (
 );
 
 CREATE TABLE fees_details (                                                                                                                                  
-	FEES_DETAILS_ID BIGINT(20) NOT NULL DEFAULT 0,
+	FEES_DETAILS_ID BIGINT(20) NOT NULL AUTO_INCREMENT,
 	FEES_PAID_DATE date DEFAULT NULL,
 	FEES_RECEIPT_NO VARCHAR(50) DEFAULT NULL,
 	AMOUNT VARCHAR(50) DEFAULT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE fees_details (
 
 
 CREATE TABLE batch_details (                                                                                                                                  
-	BATCH_ID BIGINT(20) NOT NULL DEFAULT 0,
+	BATCH_ID BIGINT(20) NOT NULL AUTO_INCREMENT,
 	BATCH_NAME VARCHAR(50) DEFAULT NULL,
 	TRAINER_NAME VARCHAR(50) DEFAULT NULL,
 	START_DATE DATE DEFAULT NULL,
